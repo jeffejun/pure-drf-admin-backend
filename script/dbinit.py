@@ -42,7 +42,7 @@ if DB_ENGINE == "sqlite3":
     sql_dir = os.path.join(BASE_DIR, "script", "sql")
     for file in os.listdir(sql_dir):
         print(f"正在处理：{file}")
-        with open(os.path.join(sql_dir, file), "r") as f:
+        with open(os.path.join(sql_dir, file), "r", encoding='utf-8') as f:
             sql_content = f.read()
         
         # 提取创建表的SQL语句
